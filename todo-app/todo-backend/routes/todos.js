@@ -28,7 +28,13 @@ router.post('/', async (req, res) => {
   })
   
   const added_todos = await redis.getAsync("added_todos");
-  await redis.setAsync('added_todos', String(Number(added_todos) + 1));
+  if (!added_todos) {
+    const all_todos = await Todo.find({});
+    const new_added_todos = all_todos.length
+    await redis.setAsync('added_todos', new_added_todos);
+  } else {
+    await redis.setAsync('added_todos', String(Number(added_todos) + 1));
+  }
 
   res.send(todo);
 });
