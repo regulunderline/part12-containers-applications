@@ -1,5 +1,6 @@
 .dockerignore
 .gitignore
+dist
 node_modules
 Dockerfile
 dev.Dockerfile

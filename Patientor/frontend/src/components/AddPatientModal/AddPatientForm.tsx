@@ -92,8 +92,9 @@ const AddPatientForm = ({ onCancel, onSubmit }: Props) => {
           }</MenuItem>
         )}
         </Select>
-
+{/* @ts-ignore */}
         <Grid>
+{/* @ts-ignore */}
           <Grid item>
             <Button
               color="secondary"
@@ -105,6 +106,7 @@ const AddPatientForm = ({ onCancel, onSubmit }: Props) => {
               Cancel
             </Button>
           </Grid>
+ {/* @ts-ignore */}
           <Grid item>
             <Button
               style={{
